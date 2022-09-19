@@ -1,4 +1,4 @@
-package com.my.hr.presentation;
+ï»¿package com.my.hr.presentation;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -34,9 +34,9 @@ public class LaborerIo {
 		do {
 			choice = Console.inNum(menu);
 			if(choice < 0 || choice > Job.length() - 1)
-				Console.err("¸Ş´º ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+				Console.err("ë©”ë‰´ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 			else isGood = true;
-		} while(!isGood);
+		} while (!isGood);
 		
 		return Job.toJob(choice);
 	}
@@ -44,44 +44,44 @@ public class LaborerIo {
 	private void listLaborers() {
 		List<Laborer> laborers = laborerService.getLaborers();
 		
-		System.out.println("ID ÀÌ¸§     ÀÔ»çÀÏ");
+		System.out.println("ID ì´ë¦„     ì…ì‚¬ì¼");
 		System.out.println("-------------------");
 		
 		if(laborers.size() > 0) laborers.forEach(laborer -> Console.info(laborer));
-		else Console.info("³ëµ¿ÀÚ°¡ ¾ø½À´Ï´Ù.");
+		else Console.info("ë…¸ë™ìê°€ ì—†ìŠµë‹ˆë‹¤.");
 	}
 	
 	private void addLaborer() {
-		String laborerName = Console.inStr("³ëµ¿ÀÚ¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä.", 5);
+		String laborerName = Console.inStr("ë…¸ë™ìëª…ì„ ì…ë ¥í•˜ì„¸ìš”.", 5);
 		
 		if(!laborerName.equals("0")) {
-			LocalDate hireDate = Console.inDate("ÀÔ»çÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+			LocalDate hireDate = Console.inDate("ì…ì‚¬ì¼ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			laborerService.addLaborer(laborerName, hireDate);
-			Console.info("³ëµ¿ÀÚ¸¦ Ãß°¡Çß½À´Ï´Ù.");
-		} else Console.info("Ãß°¡¸¦ Ãë¼ÒÇÕ´Ï´Ù.");
+			Console.info("ë…¸ë™ìë¥¼ ì¶”ê°€í–ˆìŠµë‹ˆë‹¤.");
+		} else Console.info("ì¶”ê°€ë¥¼ ì·¨ì†Œí•©ë‹ˆë‹¤.");
 	}
 	
 	private void fixLaborer() {
 		if(laborerService.getLaborers().size() > 0) {
-			int laborerId = getLaborer("¼öÁ¤");
+			int laborerId = getLaborer("ìˆ˜ì •");
 			if(laborerId > 0) {
-				String laborerName = Console.inStr("¼öÁ¤ ÇÒ ³ëµ¿ÀÚ¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä.", 5);
-				LocalDate hireDate = Console.inDate("¼öÁ¤ ÇÒ ÀÔ»çÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+				String laborerName = Console.inStr("ìˆ˜ì • í•  ë…¸ë™ìëª…ì„ ì…ë ¥í•˜ì„¸ìš”.", 5);
+				LocalDate hireDate = Console.inDate("ìˆ˜ì • í•  ì…ì‚¬ì¼ì„ ì…ë ¥í•˜ì„¸ìš”.");
 				
 				laborerService.fixLaborer(new Laborer(laborerId, laborerName, hireDate));
-				Console.info("¼öÁ¤À» ¿Ï·áÇß½À´Ï´Ù.");
+				Console.info("ìˆ˜ì •ì„ ì™„ë£Œí–ˆìŠµë‹ˆë‹¤.");
 			}
-		} else Console.info("¼öÁ¤ ÇÒ ³ëµ¿ÀÚ°¡ ¾ø½À´Ï´Ù.");
+		} else Console.info("ìˆ˜ì • í•  ë…¸ë™ìê°€ ì—†ìŠµë‹ˆë‹¤.");
 	}
 	
 	private void delLaborer() {
 		if(laborerService.getLaborers().size() > 0) {
-			int laborerId = getLaborer("»èÁ¦");
+			int laborerId = getLaborer("ì‚­ì œ");
 			if(laborerId > 0) {
 				laborerService.delLaborer(laborerId);
-				Console.info("³ëµ¿ÀÚ¸¦ »èÁ¦Çß½À´Ï´Ù.");
+				Console.info("ë…¸ë™ìë¥¼ ì‚­ì œí–ˆìŠµë‹ˆë‹¤.");
 			}
-		} else Console.info("»èÁ¦ ÇÒ ³ëµ¿ÀÚ°¡ ¾ø½À´Ï´Ù.");
+		} else Console.info("ì‚­ì œ í•  ë…¸ë™ìê°€ ì—†ìŠµë‹ˆë‹¤.");
 	}
 	
 	private int getLaborer(String job) {
@@ -89,16 +89,16 @@ public class LaborerIo {
 		int laborerId = 0;
 		
 		do {
-			laborerId = Console.inNum("³ëµ¿ÀÚID¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			laborerId = Console.inNum("ë…¸ë™ìì˜ IDë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 			
 			if(laborerId == 0) {
-				Console.info(job + " Ãë¼ÒÇÕ´Ï´Ù.");
+				Console.info(job + " ì·¨ì†Œí•©ë‹ˆë‹¤.");
 				return 0;
 			}
 			
 			laborer = laborerService.getLaborer(laborerId);
-			if(laborer == null) Console.info("ÇØ´çÇÏ´Â ID°¡ ¾ø½À´Ï´Ù.");
-		} while(laborer == null);
+			if(laborer == null) Console.info("í•´ë‹¹í•˜ëŠ” IDê°€ ì—†ìŠµë‹ˆë‹¤.");
+		} while (laborer == null);
 		
 		return laborerId;
 	}

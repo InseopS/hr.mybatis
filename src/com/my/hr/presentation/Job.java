@@ -1,7 +1,7 @@
-package com.my.hr.presentation;
+ï»¿package com.my.hr.presentation;
 
 public enum Job {
-	EXIT("Á¾·á"), LIST("¸ñ·Ï"), ADD("Ãß°¡"), FIX("¼öÁ¤"), DEL("»èÁ¦");
+	EXIT("ì¢…ë£Œ"), LIST("ëª©ë¡"), ADD("ì¶”ê°€"), FIX("ìˆ˜ì •"), DEL("ì‚­ì œ");
 	
 	private String label;
 	

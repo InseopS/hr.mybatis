@@ -1,4 +1,4 @@
-package com.my.hr;
+Ôªøpackage com.my.hr;
 
 import com.my.hr.dao.LaborerDao;
 import com.my.hr.dao.LaborerDaoImpl;
@@ -14,6 +14,6 @@ public class Main {
 		LaborerIo laborerIo = new LaborerIo(laborerService);
 		
 		laborerIo.play();
-		Console.info("≥°.");
+		Console.info("ÎÅù");
 	}
 }
